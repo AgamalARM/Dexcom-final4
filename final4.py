@@ -75,9 +75,9 @@ if authentication_status:
         
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
-        file1 = open(teacher_csv)
-        df_admins = pd.DataFrame(file1)  
-        file1.close()
+        file3 = open(teacher_csv)
+        df_admins = pd.DataFrame(file3)  
+        file3.close()
         
         teacher_id = st.sidebar.text_input("Teacher ID")
         teacher_name = st.sidebar.text_input("Teacher Name")
@@ -116,9 +116,9 @@ if authentication_status:
         csv1 = convert_df(df_teachers)
         #st.write(csv1)
         
-        file2 = open(teacher_csv)
+        file4 = open(teacher_csv)
         df_teachers.to_csv (r'teacher_data.csv', index = False, header=True)
-        file2.close()
+        file4.close()
   ################################## add student file 5,6#####################################################
     elif select_item == "Add Student":    ### add student
         file5 = open("student_data.csv")
@@ -204,6 +204,10 @@ if authentication_status:
 #             st.write("## Show Subject Dataset")
 #             st.write(df_subjects)
 #             st.write(df_subjects.shape)
+
+        if st.button("Show Dataset") :
+            st.write("## Show Subject Dataset")
+            st.write(df_sunbjects)
             
         
             
