@@ -5,7 +5,6 @@ import numpy as np
 import csv
 
 from github import Github
-from credentials import *
 import requests
 ########################################################
 # First create a Github instance:
