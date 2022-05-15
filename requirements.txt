@@ -1,2 +1,4 @@
 streamlit==1.8.1
 streamlit_authenticator==0.1.4
+deprecated==1.2.13 
+pyGithub==1.55
