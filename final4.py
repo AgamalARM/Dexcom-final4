@@ -4,6 +4,17 @@ import pandas as pd
 import numpy as np
 import csv
 
+from github import Github
+from credentials import *
+import requests
+########################################################
+# First create a Github instance:
+# using an access token from Github
+# g = Github("access_token")
+g = Github("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")
+repo1 = g.get_repo("AgamalARM/Dexcom-final4")
+
+######################################################
 st.title("Dexcom Students System")
 ######### Global variables  ##########
 names = ['Admin','Teacher']
@@ -72,6 +83,8 @@ if authentication_status:
         file2 = open(admin_csv)
         df_admins.to_csv (r'admin_data.csv', index = False, header=True)
         file2.close()
+        
+        repo1.create_file("admin.csv","Dexcom File Saved", df_admins)
         
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
