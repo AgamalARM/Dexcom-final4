@@ -84,7 +84,7 @@ if authentication_status:
         df_admins.to_csv (r'admin_data.csv', index = False, header=True)
         file2.close()
         
-        repo1.create_file("admin.csv","Dexcom File Saved", df_admins)
+        repo1.create_file("admin1.csv","Dexcom File Saved", df_admins)
         
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
