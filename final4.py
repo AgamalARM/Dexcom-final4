@@ -86,7 +86,7 @@ if authentication_status:
         st.download_button('Download CSV', text_contents)  # Defaults to 'text/plain'
 
         with open('admin_data.csv') as f:
-           st.download_button('admin_data.csv', f)  # Defaults to 'text/plain'
+           st.download_button('Download CSV', f)  # Defaults to 'text/plain'
 
         
 #         repo1.create_file("admin1.csv","Dexcom File Saved", df_admins)
