@@ -11,8 +11,8 @@ import requests
 # First create a Github instance:
 # using an access token from Github
 # g = Github("access_token")
-g = Github("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")
-repo1 = g.get_repo("AgamalARM/Dexcom-final4")
+# g = Github("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")
+# repo1 = g.get_repo("AgamalARM/Dexcom-final4")
 
 ######################################################
 st.title("Dexcom Students System")
@@ -83,8 +83,14 @@ if authentication_status:
         file2 = open(admin_csv)
         df_admins.to_csv (r'admin_data.csv', index = False, header=True)
         file2.close()
+        st.download_button('Download CSV', text_contents)  # Defaults to 'text/plain'
+
+        with open('admin_data.csv') as f:
+        st.download_button('admin_data.csv', f)  # Defaults to 'text/plain'
+
         
-        repo1.create_file("admin1.csv","Dexcom File Saved", df_admins)
+#         repo1.create_file("admin1.csv","Dexcom File Saved", df_admins)
+    
         
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
